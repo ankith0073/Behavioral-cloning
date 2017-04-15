@@ -25,6 +25,7 @@ The goals / steps of this project are the following:
 [image7]: ./examples/center_2017_04_06_21_49_48_512.jpg "center lane driving"
 [image8]: ./examples/left_2017_04_03_21_20_56_759.jpg "left camera driving"
 [image9]: ./examples/right_2017_04_03_21_15_01_158.jpg "right camera driving"
+[image10]: ./examples/architecture.png "architecture with dropouts"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -61,6 +62,8 @@ Model published by nvidia was the starting point for model selection and the mod
 The model was kept as standard without any changes but the more emphasis was given on the training data and data augmentation to make the car drive autonomously
 
 ####2. Attempts to reduce overfitting in the model
+
+Dropouts layers were added after last convolutional layer and before the last fully connected layer to avoid overfitting(line 232 and 237 of model.py).
 
 The car was driven in the simulator multiple times and this data was used to train the model and the dataset provided from udacity was used to validate the model. The validation and training accuracy was observed to be similar referring the model was not overfitting the data
 
@@ -118,6 +121,10 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 The final model architecture  consisted of a convolution neural network proposed by Nvidia deep learning paper
 
 ![alt text][image1]
+
+Dropouts were added as hown in the table below to avoid data overfitting 
+
+![alt text][image10]
 
 ####3. Creation of the Training Set & Training Process
 
